@@ -1,0 +1,13 @@
+TAsk:
+======
+• map() — 10 problems (transform arrays)                                    *
+• filter() — 10 problems (conditionals)                                     *
+• reduce() — 10 problems (accumulators)                                (Remainning)
+• Spread (...arr) — 5 real examples                                         *
+• Rest (...args) — 5 real examples                                     (Remainning)
+• Deep Copy: build deepClone() from scratch                              Advanced  thing            
+• Shallow Copy vs Deep Copy — understand why it matters                     *
+
+Build Task:
+
+Build a custom Array.prototype.myMap() from scratch                         *

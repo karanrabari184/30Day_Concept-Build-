@@ -1,0 +1,27 @@
+Rest = “collect everything into one variable”
+
+
+1. Variable number of function arguments
+function sum(...numbers) {
+  return numbers.reduce((acc, curr) => acc + curr, 0);
+}
+
+console.log(sum(1, 2, 3)); // 6
+console.log(sum(10, 20, 30, 40)); // 100
+
+👉 Real-world: APIs, utilities, flexible functions
+If you still use arguments, you're outdated.
+
+
+2. Separate first value + rest
+function log(first, ...rest) {
+  console.log(first);
+  console.log(rest);
+}
+
+log("a", "b", "c", "d");
+// "a"
+// ["b","c","d"]
+
+👉 Pattern: important value + remaining data
+

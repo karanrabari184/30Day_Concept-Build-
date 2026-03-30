@@ -1,0 +1,54 @@
+1. Copy Array (without mutation)
+
+const arr = [1,2,3]
+const copy = [...arr]
+
+copy.push(4)
+
+console.log(arr)    //[1,2,3] ✅ safe
+console.log(copy)   //[1,2,3,4]
+
+👉 If you still use arr = arr2, you're asking for bugs.
+
+2. Merge Arrays (clean way)
+
+const arr1 = [1,2,3]
+const arr2 = [4,5,6]
+
+const merged = [...arr1,...arr2]
+console.log(merged)   //[1,2,3,4,5,6]
+
+👉 This replaces ugly .concat() — cleaner and readable.
+
+3. Add Elements (beginning / end)
+
+const a = [3,4]
+const b = [1,2,...a,5]
+console.log(b); // [1,2,3,4,5]
+
+👉 Used everywhere in React when updating lists.
+
+4. Copy Object + Update (React state pattern)
+
+const user ={
+    name:"Karan",
+    age:21
+}
+
+const updatedUser={
+    ...user,
+    age;22
+}
+console.log(updatedUser);
+
+5. Remove Property from Object
+
+const user = {
+  name: "Karan",
+  age: 21,
+  password: "1234"
+};
+
+const {password, ...other} = user  //...other is the ohter detlasi then ht epassword
+
+console.log(other)    // { name: "Karan", age: 21 }

@@ -1,0 +1,94 @@
+====================
+📝 1. Shallow Copy
+=====================
+
+Definition:
+Copies only top-level values. Nested objects are still shared.
+
+Example:
+
+const a = { x: 1, y: { z: 10 } };
+const b = { ...a };
+
+b.x = 2;       // ✅ separate
+b.y.z = 20;    // ❌ shared
+
+console.log(a.y.z); // 20
+
+========================
+📝 2. Deep Copy
+========================
+
+Definition:
+Creates a completely independent copy, including nested objects.
+
+Example:
+
+const a = { x: 1, y: { z: 10 } };
+const b = structuredClone(a);
+
+b.y.z = 20;
+
+console.log(a.y.z); // 10
+
+=========================
+📝 3. Reference Copy
+=========================
+
+Definition:
+Two variables share the same object (no real copy).
+
+Example:
+
+const a = { x: 1 };
+const b = a;
+
+b.x = 2;
+
+console.log(a.x); // 2
+
+
+==============================================================
+Task:• Shallow Copy vs Deep Copy — understand why it matters
+==============================================================
+🧠 Shallow Copy vs Deep Copy (Short Explanation)
+
+🔹 Shallow Copy
+=================
+
+Copies only the top-level data
+Nested objects are still shared (same reference)
+const a = { user: { name: "Karan" } };
+const b = { ...a };
+
+b.user.name = "Jay";
+
+console.log(a.user.name); // "Jay" ❌ affected
+
+👉 Problem: Changing nested data affects the original
+
+🔹 Deep Copy
+=================
+
+Copies everything (including nested data)
+No shared references
+const a = { user: { name: "Karan" } };
+const b = structuredClone(a);
+
+b.user.name = "Jay";
+
+console.log(a.user.name); // "Karan" ✅ safe
+
+👉 Benefit: Fully independent copy
+
+⚡ Why It Matters :
+=================
+
+Prevents unexpected data changes
+Avoids bugs in React state
+Makes code predictable and easier to debug
+
+🎯 One-Line Difference :
+========================
+👉 Shallow copy shares nested data
+👉 Deep copy creates fully separate data
